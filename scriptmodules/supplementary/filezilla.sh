@@ -12,7 +12,7 @@
 
 rp_module_id="filezilla"
 rp_module_desc="A cross platform FTP application"
-rp_module_licence="https://filezilla-project.org"
+rp_module_licence="GPL2 https://svn.filezilla-project.org/filezilla/FileZilla3/trunk/COPYING?view=markup"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

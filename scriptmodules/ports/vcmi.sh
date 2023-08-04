@@ -13,7 +13,7 @@
 rp_module_id="vcmi"
 rp_module_desc="Open-source engine for Heroes of Might and Magic III "
 rp_module_help="Copy Data, Maps and Mp3 from Heroes III to roms/ports/vcmi"
-rp_module_licence="GPL https://raw.githubusercontent.com/vcmi/vcmi/develop/license.txt"
+rp_module_licence="GPL2 https://raw.githubusercontent.com/vcmi/vcmi/develop/license.txt"
 rp_module_section="exp"
 rp_module_flags="!mali"
 

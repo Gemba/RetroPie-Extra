@@ -11,7 +11,7 @@
 
 rp_module_id="boswars"
 rp_module_desc="boswars - Battle of Survival - is a futuristic real-time strategy game"
-rp_module_licence="GNU https://libregamewiki.org/GNU_General_Public_License"
+rp_module_licence="GPL2 https://codeberg.org/boswars/boswars/src/branch/master/LICENSE.txt"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

@@ -11,7 +11,7 @@
 
 rp_module_id="0ad"
 rp_module_desc="0ad - Battle of Survival - is a futuristic real-time strategy game"
-rp_module_licence="GNU https://libregamewiki.org/GNU_General_Public_License"
+rp_module_licence="GPL2 https://svn.wildfiregames.com/public/ps/trunk/license_gpl-2.0.txt"
 rp_module_section="exp"
 rp_module_flags="!mali rpi4"
 

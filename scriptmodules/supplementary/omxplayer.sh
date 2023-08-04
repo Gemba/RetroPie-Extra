@@ -13,7 +13,7 @@
 rp_module_id="omxplayer"
 rp_module_desc="omxplayer - Video Player"
 rp_module_help="Put your videos into $"
-rp_module_licence="GPL2 https://www.gnu.org/licenses/gpl-2.0.txt"
+rp_module_licence="GPL2 https://github.com/popcornmix/omxplayer/blob/master/COPYING"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

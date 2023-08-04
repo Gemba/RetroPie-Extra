@@ -14,7 +14,7 @@ rp_module_desc="OpenJKDF2 is a function-by-function reimplementation of Dark For
 # I hate this really long line.  I couldn't get all the information to display otherwise.
 #
 rp_module_help="Data must be installed manually.\nData for Jedi Knight - Dark Forces 2 goes into $romdir/openjkdf2/openjkdf2.\nData for Jedi Knight - Mysteries of the Sith goes into $romdir/openjkdf2/openjkmots.\nFor both games the 'episode' 'player' 'resource' and 'Music' directories must be copied into their repsective folders."
-rp_module_licence="OTHER https://github.com/shinyquagsire23/OpenJKDF2/blob/master/LICENSE.md"
+rp_module_licence="CUSTOM https://raw.githubusercontent.com/shinyquagsire23/OpenJKDF2/master/LICENSE.md"
 rp_module_repo="git https://github.com/shinyquagsire23/OpenJKDF2.git v0.8.12"
 rp_module_section="exp"
 rp_module_flags="!all x86_64"

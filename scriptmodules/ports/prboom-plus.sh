@@ -12,7 +12,7 @@
 
 rp_module_id="prboom-plus"
 rp_module_desc="Doom/Doom II engine - Enhanced PRBoom Port"
-rp_module_licence="https://github.com/coelckers/prboom-plus"
+rp_module_licence="GPL2 https://github.com/coelckers/prboom-plus/blob/master/prboom2/COPYING"
 rp_module_repo="git https://github.com/coelckers/prboom-plus.git master"
 rp_module_section="exp"
 

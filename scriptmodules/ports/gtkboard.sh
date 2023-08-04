@@ -12,7 +12,7 @@
 
 rp_module_id="gtkboard"
 rp_module_desc="Board games system"
-rp_module_licence="gtkboard.sourceforge.net"
+rp_module_licence="GPL2 https://gtkboard.sourceforge.net"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

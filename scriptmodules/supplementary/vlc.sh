@@ -12,7 +12,7 @@
 
 rp_module_id="vlc"
 rp_module_desc="VLC media player"
-rp_module_licence="https://www.videolan.org"
+rp_module_licence="GPL2 https://www.videolan.org/vlc"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

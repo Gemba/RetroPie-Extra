@@ -12,7 +12,7 @@
 
 rp_module_id="fallout2"
 rp_module_desc="Fallout 2 Community Edition"
-rp_module_licence="GNU https://raw.githubusercontent.com/alexbatalov/fallout2-ce/main/LICENSE.md"
+rp_module_licence="SUL1 https://raw.githubusercontent.com/alexbatalov/fallout2-ce/main/LICENSE.md"
 rp_module_help="Copy over the master.dat, critter.dat, patch000.dat, and data folder to ports/fallout2"
 rp_module_section="exp"
 rp_module_flags=""

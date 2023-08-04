@@ -12,7 +12,7 @@
 
 rp_module_id="libreoffice"
 rp_module_desc="Open source office suite"
-rp_module_licence="https://www.libreoffice.org"
+rp_module_licence="MPL2 https://www.libreoffice.org/get-help/frequently-asked-questions/#whyfree"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

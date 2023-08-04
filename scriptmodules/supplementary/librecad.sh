@@ -12,7 +12,7 @@
 
 rp_module_id="librecad"
 rp_module_desc="librecad open-source 2d cad"
-rp_module_licence="https://www.audacityteam.org"
+rp_module_licence="GPL2 https://github.com/LibreCAD/LibreCAD/tree/master/licenses"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

@@ -11,7 +11,7 @@
 
 rp_module_id="vanillacc"
 rp_module_desc="Vanilla-Command and Conquer"
-rp_module_licence="GNU https://github.com/TheAssemblyArmada/Vanilla-Conquer/blob/vanilla/License.txt"
+rp_module_licence="CUSTOM https://github.com/TheAssemblyArmada/Vanilla-Conquer/blob/vanilla/License.txt"
 rp_module_help="you will need to vist my github.com/Exarkuniv/Vanilla-Conquer=RPI for more info NOTE\n\ CCLOCAL.MIX needs to stay in tiberian dawn or the game will not run
 \nconquer.mix 	GDI or NOD disc: CONQUER.MIX\ndesert.mix 	GDI or NOD disc: DESERT.MIX\ntemperat.mix 	GDI or NOD disc: TEMPERAT.MIX\nwinter.mix 	GDI or NOD disc: WINTER.MIX\nsounds.mix 	GDI or NOD disc: SOUNDS.MIX\ncclocal.mix 	GDI or NOD disc, within: INSTALL/SETUP.Z\ntransit.mix 	GDI or NOD disc, within: INSTALL/SETUP.Z\nspeech.mix 	GDI or NOD disc, within: INSTALL/SETUP.Z\nupdate.mix 	GDI or NOD disc, within: INSTALL/SETUP.Z\nupdatec.mix 	GDI or NOD disc, within: INSTALL/SETUP.Z\ndeseicnh.mix 	GDI or NOD disc, within: INSTALL/SETUP.Z\ntempicnh.mix 	GDI or NOD disc, within: INSTALL/SETUP.Z\nwinticnh.mix 	GDI or NOD disc, within: INSTALL/SETUP.Z\ngdi/general.mix 	GDI disc: GENERAL.MIX\ngdi/movies.mix 	GDI disc: MOVIES.MIX\ngdi/scores.mix 	GDI disc: SCORES.MIX\nnod/general.mix 	NOD disc: GENERAL.MIX\nnod/movies.mix 	NOD disc: MOVIES.MIX\nnod/scores.mix 	NOD disc: SCORES.MIX"
 rp_module_repo="wget https://github.com/TheAssemblyArmada/Vanilla-Conquer/archive/refs/tags/latest.tar.gz"

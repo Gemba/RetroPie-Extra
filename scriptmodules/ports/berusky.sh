@@ -11,7 +11,7 @@
 
 rp_module_id="berusky"
 rp_module_desc="berusky - Advanced sokoban clone with nice graphics"
-rp_module_licence="GNU https://libregamewiki.org/GNU_General_Public_License"
+rp_module_licence="GPL2 https://www.anakreon.cz/berusky1.html"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

@@ -12,7 +12,7 @@
 
 rp_module_id="gparted"
 rp_module_desc="partition editing application"
-rp_module_licence="https://gparted.org"
+rp_module_licence="GPL2 https://gparted.org"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

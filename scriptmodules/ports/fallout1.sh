@@ -12,7 +12,7 @@
 
 rp_module_id="fallout1"
 rp_module_desc="Fallout Community Edition"
-rp_module_licence="GNU https://raw.githubusercontent.com/alexbatalov/fallout1-ce/main/LICENSE.md"
+rp_module_licence="SUL1 https://raw.githubusercontent.com/alexbatalov/fallout1-ce/main/LICENSE.md"
 rp_module_help="Copy over the master.dat, critter.dat, and data folder to ports/fallout1. EVERYTHING needs to be lower case or it will not work"
 rp_module_section="exp"
 rp_module_flags=""

@@ -12,7 +12,7 @@
 
 rp_module_id="fs2open"
 rp_module_desc="FreeSpace 2 Open - Origin Repository for FreeSpace 2"
-rp_module_licence="https://raw.githubusercontent.com/scp-fs2open/fs2open.github.com/master/Unlicense.md"
+rp_module_licence="UNL https://raw.githubusercontent.com/scp-fs2open/fs2open.github.com/master/Unlicense.md"
 rp_module_help="FreeSpace2 \nInstall files \n
 root_fs2.vp\n
 smarty_fs2.vp\n

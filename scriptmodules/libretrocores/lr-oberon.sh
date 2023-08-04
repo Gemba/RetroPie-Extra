@@ -13,7 +13,7 @@
 rp_module_id="lr-oberon"
 rp_module_desc="Oberon RISC emulator for libretro"
 rp_module_help="ROM Extensions: .dsk\n\nOberon RISC disk images are copied to $romdir/ports/oberon"
-rp_module_licence="Unknown https://inf.ethz.ch/personal/wirth/ProjectOberon/license.txt"
+rp_module_licence="CUSTOM https://inf.ethz.ch/personal/wirth/ProjectOberon/license.txt"
 rp_module_repo="git https://github.com/libretro/oberon-risc-emu master"
 rp_module_section="exp"
 rp_module_flags=""

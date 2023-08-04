@@ -12,7 +12,7 @@
 
 rp_module_id="kraptor"
 rp_module_desc="Shoot em up scroller game"
-rp_module_licence="https://lutris.net/games/kraptor/"
+rp_module_licence="MIT https://sourceforge.net/projects/kraptor/files/kraptor_source_code/final_apr_03_2004/"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

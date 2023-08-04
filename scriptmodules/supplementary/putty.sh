@@ -12,7 +12,7 @@
 
 rp_module_id="putty"
 rp_module_desc="SSH and telnet client"
-rp_module_licence="https://www.putty.org"
+rp_module_licence="MIT https://www.chiark.greenend.org.uk/~sgtatham/putty/licence.html"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

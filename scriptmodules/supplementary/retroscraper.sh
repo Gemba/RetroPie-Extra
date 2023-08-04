@@ -11,7 +11,7 @@
 
 rp_module_id="retroscraper"
 rp_module_desc="Scraper for EmulationStation by kiro"
-rp_module_licence="GNU https://github.com/zayamatias/retroscraper-rpie/blob/main/LICENSE"
+rp_module_licence="GPL2 https://github.com/zayamatias/retroscraper-rpie/blob/main/LICENSE"
 rp_module_repo="git https://github.com/zayamatias/retroscraper-rpie.git main"
 rp_module_section="exp"
 

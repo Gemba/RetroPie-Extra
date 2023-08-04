@@ -12,7 +12,7 @@
 rp_module_id="sqrxz3"
 rp_module_desc="Sqrxz 3 - Adventure For Love by Retroguru"
 rp_module_help="Sqrxz 3 is a Jump'n'Run which requires a sharp mind and fast reflexes, high frustration is guaranteed."
-rp_module_licence="Retroguru http://www.retroguru.com/legal/"
+rp_module_licence="PROP http://www.retroguru.com/legal/"
 rp_module_section="opt"
 rp_module_flags="!x86 !mali"
 

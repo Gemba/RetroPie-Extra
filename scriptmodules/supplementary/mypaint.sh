@@ -12,7 +12,7 @@
 
 rp_module_id="mypaint"
 rp_module_desc="mypaint easy-to-use painting program"
-rp_module_licence="mypaint.org"
+rp_module_licence="GPL2 https://github.com/mypaint/mypaint/blob/master/COPYING"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

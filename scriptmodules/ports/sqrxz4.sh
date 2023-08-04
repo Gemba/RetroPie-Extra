@@ -12,7 +12,7 @@
 rp_module_id="sqrxz4"
 rp_module_desc="Sqrxz 4 - Cold Cash by Retroguru"
 rp_module_help="The fourth part of the quadrology Jump'n Think series Sqrxz brings you onto an cold icy island. Shiny marbles, evil penguins and ghosts, underwater creatures and many more to expect."
-rp_module_licence="Retroguru http://www.retroguru.com/legal/"
+rp_module_licence="PROP http://www.retroguru.com/legal/"
 rp_module_section="opt"
 rp_module_flags="!x86 !mali"
 

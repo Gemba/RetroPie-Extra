@@ -12,7 +12,7 @@
 rp_module_id="supaplex"
 rp_module_desc="Reverse engineering Supaplex"
 rp_module_help="play the game"
-rp_module_licence="GNU https://www.gnu.org/licenses/gpl-3.0"
+rp_module_licence="CUSTOM https://github.com/sergiou87/open-supaplex/#license"
 rp_module_repo="file https://github.com/Exarkuniv/Rpi-pikiss-binary/raw/Master/open-supaplex-rpi.tar.gz"
 rp_module_section="exp"
 rp_module_flags="!armv6 rpi4"

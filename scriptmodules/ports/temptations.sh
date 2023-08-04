@@ -10,13 +10,13 @@
 #
 
 rp_module_id="temptations"
-rp_module_desc="Temptations - enhanced version of the MXS game"
+rp_module_desc="Temptations - Enhanced version of the MSX game"
 rp_module_help="F11 - Switches between Window and Full Screen.
- · G - Switches graphics between MSX Original and Nene Franz's new one.
- · L - Switches between Spanish and English language.
- · M - Switches Music off or on.
- · P - Pause."
-rp_module_licence="GNU https://www.gnu.org/licenses/gpl-3.0"
+ ï¿½ G - Switches graphics between MSX Original and Nene Franz's new one.
+ ï¿½ L - Switches between Spanish and English language.
+ ï¿½ M - Switches Music off or on.
+ ï¿½ P - Pause."
+rp_module_licence="GPL3 https://www.gnu.org/licenses/gpl-3.0"
 rp_module_repo="file https://github.com/Exarkuniv/Rpi-pikiss-binary/raw/Master/temptations-rpi.tar.gz"
 rp_module_section="exp"
 rp_module_flags="!armv6 rpi4"

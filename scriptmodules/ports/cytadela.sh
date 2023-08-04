@@ -11,7 +11,7 @@
 
 rp_module_id="cytadela"
 rp_module_desc="Cytadela project - a conversion of an Amiga first person shooter"
-rp_module_licence="GNU http://cytadela.sourceforge.net/license.php"
+rp_module_licence="GPL3 http://cytadela.sourceforge.net/license.php"
 rp_module_section="exp"
 rp_module_flags="noinstclean"
 

@@ -13,7 +13,7 @@
 rp_module_id="lr-duckstation"
 rp_module_desc="PlayStation emulator - Duckstation for libretro"
 rp_module_help="ROM Extensions: .exe .cue .bin .chd .psf .m3u .pbp\n\nCopy your PlayStation roms to $romdir/psx\n\nCopy compatible BIOS files to $biosdir"
-rp_module_licence="PROP https://creativecommons.org/licenses/by-nc-nd/4.0"
+rp_module_licence="CC-BY-NC-ND-4.0 https://creativecommons.org/licenses/by-nc-nd/4.0"
 rp_module_section="exp"
 rp_module_flags="!all arm !armv6 aarch64 64bit"
 

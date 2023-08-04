@@ -12,7 +12,7 @@
 
 rp_module_id="audacity"
 rp_module_desc="Audacity open-source digital audio editor"
-rp_module_licence="https://www.audacityteam.org"
+rp_module_licence="GPL2 https://www.audacityteam.org/about/license/"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

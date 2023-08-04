@@ -12,7 +12,7 @@
 
 rp_module_id="pokerth"
 rp_module_desc="pokerth is an open source online poker"
-rp_module_licence="https://github.com/GNOME/epiphany"
+rp_module_licence="AGPL https://github.com/pokerth/pokerth/blob/stable/COPYING"
 rp_module_section="exp"
 rp_module_flags="!mali !x86"
 

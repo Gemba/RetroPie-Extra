@@ -13,7 +13,7 @@
 rp_module_id="lr-potator"
 rp_module_desc="Watara Supervision emulator based on Normmatt version - Potator port for libretro"
 rp_module_help="ROM Extensions: .sv .zip .7z\n\nCopy your Watara Supervision roms to $romdir/svision"
-rp_module_licence="Unl https://raw.githubusercontent.com/libretro/potator/master/LICENSE"
+rp_module_licence="UNL https://raw.githubusercontent.com/libretro/potator/master/LICENSE"
 rp_module_section="exp"
 rp_module_repo="git https://github.com/libretro/potator.git master"
 rp_module_flags=""

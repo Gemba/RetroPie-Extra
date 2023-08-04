@@ -12,7 +12,7 @@
 rp_module_id="hhexen"
 rp_module_desc="Hexen GL port"
 rp_module_help="Please put your heretic.wad in the roms/ports/hexen folder" 
-rp_module_licence="GNU https://sourceforge.net/p/hhexen/hhexen/ci/master/tree/LICENSE.md"
+rp_module_licence="GPL2 https://sourceforge.net/p/hhexen/hhexen/ci/master/tree/LICENSE"
 rp_module_repo="wget https://sourceforge.net/projects/hhexen/files/hhexen/1.6.3/hhexen-1.6.3-src.tgz"
 rp_module_section="exp"
 rp_module_flags="!mali"

@@ -14,7 +14,7 @@ rp_module_id="chopper258"
 rp_module_desc="Chopper Commando Revisited - a modern port of Chopper Commando (DOS, 1990), written by Mark Currie and ported by loadzero"
 rp_module_help="A keyboard is required."
 rp_module_repo="git https://github.com/loadzero/chopper258 master"
-rp_module_licence="freeware https://raw.githubusercontent.com/loadzero/chopper258/master/CREDITS.txt"
+rp_module_licence="FREEWARE https://raw.githubusercontent.com/loadzero/chopper258/master/CREDITS.txt"
 rp_module_section="exp"
 rp_module_flags="sdl2"
 

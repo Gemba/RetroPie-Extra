@@ -13,7 +13,7 @@
 rp_module_id="prototype"
 rp_module_desc="ProtoType - an R-Type remake by Ron Bunce"
 rp_module_help="A keyboard is required to exit the game."
-rp_module_licence="freeware https://web.archive.org/web/20160507085617/http://xout.blackened-interactive.com/ProtoType/Prototype.html"
+rp_module_licence="FREEWARE https://web.archive.org/web/20160507085617/http://xout.blackened-interactive.com/ProtoType/Prototype.html"
 rp_module_repo="git https://github.com/ptitSeb/prototype.git master 12d2de8"
 rp_module_section="exp"
 rp_module_flags=""
