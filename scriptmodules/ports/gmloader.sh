@@ -29,7 +29,8 @@ function sources_gmloader() {
 }
 
 function build_gmloader() {
-    mkdir build && cd build || exit
+    mkdir build
+    cd build
     cmake -DCMAKE_BUILD_TYPE=Release -DPLATFORM=linux -DPORT=gmloader ..
     make
     md_ret_require="$md_build/build/gmloader"
@@ -37,56 +38,44 @@ function build_gmloader() {
 
 function install_gmloader() {
     md_ret_files=(
-        build/gmloader
-        LICENSE.md
-        README.md
+        'build/gmloader'
+        'LICENSE.md'
+        'README.md'
     )
-    # provide fail safe libc++_shared.so for APKs not containing it
-    downloadAndExtract "https://chromium.googlesource.com/android_ndk.git/+archive/refs/heads/main/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a.tar.gz" "$md_inst" "libc++_shared.so"
-    strip -s "$md_inst/libc++_shared.so"
-    chmod a-x "$md_inst/libc++_shared.so"
 }
 
 function configure_gmloader() {
     local apk_dir="$romdir/ports/droidports"
     local maldita_url="https://locomalito.com/juegos/Maldita_Castilla_ouya.apk"
     local spelunky_url="https://github.com/yancharkin/SpelunkyClassicHD/releases/download/1.1.7-optimized/spelunky_classic_hd-android-armv7.apk"
-    local am2r_file="$apk_dir/am2r_155.apk"
 
     if [[ "$md_mode" == "install" ]]; then
         mkUserDir "$apk_dir"
         local dl_url
-        for dl_url in "$maldita_url" "$spelunky_url"
-        do
+        for dl_url in "$maldita_url" "$spelunky_url"; do
             local apk_file="$apk_dir/$(basename ${dl_url})"
             if [[ ! -f "$apk_file" ]] ; then
-                download "${dl_url}" "$apk_dir"
-                chown "$user":"$user" "$apk_file"
+                download "$dl_url" "$apk_dir"
+                chown $user:$user "$apk_file"
                 chmod a-x "$apk_file"
             fi
         done
 
-        # Launcher: Change to install folder as failsafe to load libc++_shared.so for APKs which do not bundle them
-        # https://github.com/JohnnyonFlame/droidports/blob/9e43646b43ca3bf80a50edfc1a212d2c702b617d/ports/gmloader/main.c#L117-L123
-        cat >"$md_inst/gmlauncher.sh" << _EOF_
-#! /usr/bin/env bash
-cd "$md_inst"
-ROM="\$1"
-fn="\${ROM##*/}"
-BASENAME="\${fn%.*}"
-GMLOADER_SAVEDIR="$home/.config/gmloader/\$BASENAME/" ./gmloader "\$ROM"
-_EOF_
-        chmod a+x "$md_inst/gmlauncher.sh"
-
-        local maldita_file="$apk_dir/$(basename ${maldita_url})"
-        local spelunky_file="$apk_dir/$(basename ${spelunky_url})"
-        addPort "$md_id" "droidports" "Maldita Castilla" "$md_inst/gmlauncher.sh %ROM%" "$maldita_file"
-        addPort "$md_id" "droidports" "Spelunky Classic HD" "$md_inst/gmlauncher.sh %ROM%" "$spelunky_file"
-        moveConfigDir "$home/.config/gmloader" "$md_conf_root/droidports"
-
+        # provide fail safe libc++_shared.so for APKs not containing it
+        downloadAndExtract "https://chromium.googlesource.com/android_ndk.git/+archive/refs/heads/main/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a.tar.gz" "$md_inst" "libc++_shared.so"
+        strip -s "$md_inst/libc++_shared.so"
+        chmod a-x "$md_inst/libc++_shared.so"
     fi
 
+    local maldita_file="$apk_dir/$(basename ${maldita_url})"
+    local spelunky_file="$apk_dir/$(basename ${spelunky_url})"
+    addPort "$md_id" "droidports" "Maldita Castilla" "pushd $md_inst; GMLOADER_SAVEDIR=$home/.config/gmloader/%BASENAME%/ ./gmloader %ROM%; popd" "$maldita_file"
+    addPort "$md_id" "droidports" "Spelunky Classic HD" "pushd $md_inst; GMLOADER_SAVEDIR=$home/.config/gmloader/%BASENAME%/ ./gmloader %ROM%; popd" "$spelunky_file"
+
+    local am2r_file="$apk_dir/am2r_155.apk"
     if [[ -f "$am2r_file" || "$md_mode" == "remove" ]]; then
-        addPort "$md_id" "droidports" "AM2R - Another Metroid 2 Remake" "$md_inst/gmlauncher.sh %ROM%" "$am2r_file"
+        addPort "$md_id" "droidports" "AM2R - Another Metroid 2 Remake" "pushd $md_inst; GMLOADER_SAVEDIR=$home/.config/gmloader/%BASENAME%/ ./gmloader %ROM%; popd" "$am2r_file"
     fi
+
+    moveConfigDir "$home/.config/gmloader" "$md_conf_root/droidports"
 }
