@@ -61,11 +61,13 @@ function configure_gmloader() {
             fi
         done
 
-        if [[ ! -f "$md_inst/libc++_shared.so" ]]; then
+        local lib_fname="libc++_shared.so"
+        local lib_file="$md_inst/$lib_fname"
+        if [[ ! -f "$lib_file" ]]; then
             # provide fail safe libc++_shared.so for APKs not containing it
-            downloadAndExtract "https://chromium.googlesource.com/android_ndk.git/+archive/refs/heads/main/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a.tar.gz" "$md_inst" "libc++_shared.so"
-            strip -s "$md_inst/libc++_shared.so"
-            chmod a-x "$md_inst/libc++_shared.so"
+            downloadAndExtract "https://chromium.googlesource.com/android_ndk.git/+archive/refs/heads/main/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a.tar.gz" "$md_inst" "$lib_fname"
+            strip -s "$lib_file"
+            chmod a-x "$lib_file"
         fi
     fi
 
