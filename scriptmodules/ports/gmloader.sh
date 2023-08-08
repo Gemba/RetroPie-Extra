@@ -61,10 +61,12 @@ function configure_gmloader() {
             fi
         done
 
-        # provide fail safe libc++_shared.so for APKs not containing it
-        downloadAndExtract "https://chromium.googlesource.com/android_ndk.git/+archive/refs/heads/main/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a.tar.gz" "$md_inst" "libc++_shared.so"
-        strip -s "$md_inst/libc++_shared.so"
-        chmod a-x "$md_inst/libc++_shared.so"
+        if [[ ! -f "$md_inst/libc++_shared.so" ]]; then
+            # provide fail safe libc++_shared.so for APKs not containing it
+            downloadAndExtract "https://chromium.googlesource.com/android_ndk.git/+archive/refs/heads/main/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a.tar.gz" "$md_inst" "libc++_shared.so"
+            strip -s "$md_inst/libc++_shared.so"
+            chmod a-x "$md_inst/libc++_shared.so"
+        fi
     fi
 
     local maldita_file="$apk_dir/$(basename ${maldita_url})"
