@@ -17,6 +17,18 @@ rp_module_repo="git https://github.com/retropieuser/aethersx2.git main"
 rp_module_section="exp"
 rp_module_flags="!all 64bit"
 
+function _get_vars_sx2() {
+    declare -A path=(
+        [onstart]="$configdir/all/runcommand-onstart.sh"
+        [onend]="$configdir/all/runcommand-onend.sh"
+    )
+
+    local var
+    for var in "${!path[@]}"; do
+        echo "local $var=${path[$var]}"
+    done
+}
+
 function depends_aethersx2() {
     local depends=(matchbox-window-manager xorg xserver-xorg-input-all mesa-vulkan-drivers pulseaudio pipewire-media-session-pulseaudio)
 
@@ -28,11 +40,37 @@ function sources_aethersx2() {
 }
 
 function install_aethersx2() {
+    $(_get_vars_sx2)
+    local file
     tar -xzvf AetherSX2-v1.5-3606.tar.gz -C "/opt/retropie/emulators/aethersx2"
     chmod +x /opt/retropie/emulators/aethersx2/AetherSX2-v1.5-3606/usr/bin/aethersx2
 }
 
 function configure_aethersx2() {
+    $(_get_vars_sx2)
+    # preserve original file versions
+    local file
+    for file in "$onend"; do
+        if [[ -f "$file" && ! -f "$file.old.$md_id" ]]; then
+            cp -v "$file" "$file.old.$md_id"
+            chown $user:$user "$file.old.$md_id"
+        fi
+    done
+
+    # getting it to write the command line thats needed
+     if isPlatform "rpi"; then
+        for file in "$onend"; do
+            touch "$file"
+            chown $user:$user "$file"
+        done
+     #the command that needs to be written
+        local onend_text='rm /opt/retropie/configs/ps2/Config/cache/vulkan_pipelines.bin && rm /opt/retropie/configs/ps2/Config/cache/vulkan_shaders.bin && rm /opt/retropie/configs/ps2/Config/cache/vulkan_shaders.idx'
+
+        # writing command to the correct file
+        echo "$onend_text" >> "$onend"
+
+    fi
+
     mkRomDir "ps2"
     
     local launch_prefix
@@ -536,4 +574,5 @@ _EOF_
     fi
 
     chown -R $user:$user "$md_conf_root/ps2/Config"
+
 }
