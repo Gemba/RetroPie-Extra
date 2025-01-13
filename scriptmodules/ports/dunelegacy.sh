@@ -36,9 +36,16 @@ function build_dunelegacy() {
         sed -i "/*Mix_Init(MIX_INIT_FLUIDSYNTH | MIX_INIT_FLAC | MIX_INIT_MP3 | MIX_INIT_OGG)/c\\Mix_Init(MIX_INIT_MID | MIX_INIT_FLAC | MIX_INIT_MP3 | MIX_INIT_OGG)" $md_build/src/FileClasses/music/DirectoryPlayer.cpp	
 sed -i "/if((Mix_Init(MIX_INIT_FLUIDSYNTH) & MIX_INIT_FLUIDSYNTH) == 0) {/c\\if((Mix_Init(MIX_INIT_MID) & MIX_INIT_MID) == 0) {" $md_build/src/FileClasses/music/XMIPlayer.cpp	
 
+# Bookworm error: field ‘mentatStrings’ has incomplete type ‘std::array<std::unique_ptr<MentatTextFile>, 3>’
+sed -i '1s/^/#include <tuple> \n/' $md_build/src/FileClasses/TextManager.cpp
+sed -i '1s/^/#include <array> \n/' $md_build/src/FileClasses/TextManager.cpp
+
+# Flickering fix -> Comment 1st instance of  // SDL_RenderPresent(renderer);
+sed '0,/SDL_RenderPresent(renderer);/s//\/\/SDL_RenderPresent(renderer);/' $md_build/src/Game.cpp > /dev/shm/Game.cpp; sudo mv /dev/shm/Game.cpp $md_build/src/Game.cpp
+
     autoreconf --install
     ./configure "${params[@]}"
-    make 
+    make -j4
 	md_ret_require="$md_build/src/dunelegacy"
 }
 
