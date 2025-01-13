@@ -1,6 +1,11 @@
 
 # RetroPie-Extra
 
+This is a **collection of unofficial installation scripts for RetroPie** allowing you to quickly and easily **install emulators, ports and libretrocores** that haven't been included in RetroPie for one reason or another. These scripts can be considered experimental at best. 
+I have found new scripts made by other people and added them to this Repo. I dont take credit for any of them, other then the ones I made
+
+Most of the scripts do work as is. 
+
 **UPDATE**
 **YOU WILL NEED TO UPDATE RETROPIE**
 
@@ -12,16 +17,11 @@ And no I will not be working on ways to make it work with all versions, Please d
 
 **The Pi5 is still being worked on and will continue to grow as time goes on as 64bit is still new for the Pi**
 
-This is a **collection of unofficial installation scripts for RetroPie** allowing you to quickly and easily **install emulators, ports and libretrocores** that haven't been included in RetroPie for one reason or another. These scripts can be considered experimental at best. 
-I have found new scripts made by other people and added them to this Repo. I dont take credit for any of them, other then the ones I made
-
-Most of the scripts do work as is. 
-
-**I DONT HAVE A X86, SO I DIDNT TEST THOSE SCRIPTS, YOUR ARE ON YOUR OWN**
-
 I have changed the list below to show what has been tested to at least to install. I dont have all the games so I cant test them all 
 
 Pull requests and issue reports are accepted and encouraged as well as requests. Feel free to use the issue tracker to send me any personal requests for new scripts that you may have.
+
+**I DONT HAVE A X86, SO I DIDNT TEST THOSE SCRIPTS, YOUR ARE ON YOUR OWN**
 
 ## Installation with GUI menu, 
 There is a command line way of using this script, instructions coming soon
