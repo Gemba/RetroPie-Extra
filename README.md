@@ -103,21 +103,29 @@ git pull origin
 Scripts that are unfinished/untested/unpolished/or broken will not be located in this repository and instead have been moved to [RetroPie-Extra-unstable](https://github.com/Exarkuniv/RetroPie-Extra-unstable).
 
 If there is a [X] that means it Installs and Plays. 
+
+If there is a [4], [5] that ties to that Pi model only
+
+If there is a [B] that means it works for both
+
 I'll have a note at the end with some Info about it. if there is NO note or [X] **PLEASE LET ME KNOW** if it works for you 
 
 #### Emulators
 
-- [x] - `box86.sh` -"Box86 emulator" **Installs Runs fine**
-- [x] - `duckstation.sh` -"PlayStation emulator - Duckstation standalone" **Installs Runs fine**
-- [X] - `gearboy.sh` - Gameboy emulator - **Installs Plays fine, Need to clean up the controls**
+- [X] [5] - `aethersx2` -PS2 emulator
+- [x] [4] - `box86.sh` -"Box86 emulator" **Installs Runs fine**
+- [x] [4]- `duckstation.sh` -"PlayStation emulator - Duckstation standalone" **Installs Runs fine**
+- [ ] [4] - `flycast` -Sega Dreamcast emulator
+- [X] [5]- `gearboy.sh` - Gameboy emulator - **Installs Plays fine, Need to clean up the controls**
 - [ ] - `kat5200.sh` - Atari 8-bit/5200 emulator - **x86 only**
-- [X] - `openbor.sh` - Beat 'em Up Game Engine (newest version) - **Tested only on Pi4 so far, installs as a system instead of as a port, direct launching of games from emulationstation supported!**
-- [x] - `pico8.sh` - Fantasy Game Emulator - Adds as a new system in RetroPie so you can directly launch carts. **Was told that it works fine, so I'll go with that**
-- [ ] - `pokemini.sh` - Pokemon Mini emulator  - **x86 only**
-- [X] - `ppsspp-dev.sh` - PlayStation Portable emulator PPSSPP - latest development version - **Tested and works on RPi4 (May 2022)**
+- [X] [4]- `openbor.sh` - Beat 'em Up Game Engine - **Tested only on Pi4 so far, installs as a system instead of as a port, direct launching of games from emulationstation supported!**
+- [X] [5] - `openbor-v7533`  - Beat 'em Up Game Engine **installs as a system instead of as a port, direct launching of games from emulationstation supported!**
+- [x] [4]- `pico8.sh` - Fantasy Game Emulator - Adds as a new system in RetroPie so you can directly launch carts. **Was told that it works fine, so I'll go with that**
+- [X] [5]- `pokemini.sh` - Pokemon Mini emulator  - **x86 only**
+- [X] [4]- `ppsspp-dev.sh` - PlayStation Portable emulator PPSSPP - latest development version - **Tested and works on RPi4 (May 2022)**
 
-- [X] - `supermodel-mechafatnick.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
-- [X] - `supermodel-svn.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
+- [X] [B]- `supermodel-mechafatnick.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
+- [X] [B]- `supermodel-svn.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
 
 #### Libretrocores
 
