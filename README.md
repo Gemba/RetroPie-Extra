@@ -122,7 +122,7 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [X] [5] - `openbor-v7533`  - Beat 'em Up Game Engine **installs as a system instead of as a port, direct launching of games from emulationstation supported!**
 - [x] [4]- `pico8.sh` - Fantasy Game Emulator - Adds as a new system in RetroPie so you can directly launch carts. **Was told that it works fine, so I'll go with that**
 - [X] [5]- `pokemini.sh` - Pokemon Mini emulator  - **x86 only**
-- [X] [4]- `ppsspp-dev.sh` - PlayStation Portable emulator PPSSPP - latest development version - **Tested and works on RPi4 (May 2022)**
+- [ ] - `ppsspp-dev.sh` - PlayStation Portable emulator PPSSPP - latest development version - **Fails on pi4 and 5 (Jan 2025)**
 
 - [X] [B]- `supermodel-mechafatnick.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
 - [X] [B]- `supermodel-svn.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
