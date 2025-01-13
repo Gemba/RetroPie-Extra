@@ -18,7 +18,13 @@ rp_module_section="exp"
 rp_module_flags="!mali !all rpi4 rpi3"
 
 function depends_dunelegacy() {
-    getDepends autotools-dev libsdl2-mixer-dev libopusfile0 libsdl2-mixer-2.0-0 libsdl2-ttf-dev xorg matchbox-window-manager x11-xserver-utils  libfluidsynth-dev  libfluidsynth1 fluidsynth
+
+    local depends=(autotools-dev libsdl2-mixer-dev libopusfile0 libsdl2-mixer-2.0-0 libsdl2-ttf-dev xorg matchbox-window-manager x11-xserver-utils  libfluidsynth-dev fluidsynth)
+
+	    isPlatform "64bit" && depends+=(libfluidsynth3)
+        isPlatform "32bit" && depends+=(libfluidsynth1)
+
+	getDepends "${depends[@]}"
 }
 
 function sources_dunelegacy() {
@@ -45,7 +51,7 @@ function game_data_dunelegacy() {
         downloadAndExtract "https://github.com/Exarkuniv/game-data/raw/main/dune-II.zip" "$romdir/ports/dune2"
     mv "$romdir/ports/dune2/dune-ii-the-building-of-a-dynasty/"* "$romdir/ports/dune2/data"
     rmdir "$romdir/ports/dune2/dune-ii-the-building-of-a-dynasty/"
-    chown -R $user:$user "$romdir/ports/dune2"
+    chown $__user:$__group -R "$romdir/ports/dune2"
     fi
 }
 
