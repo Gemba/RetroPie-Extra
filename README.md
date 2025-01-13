@@ -116,12 +116,12 @@ I'll have a note at the end with some Info about it. if there is NO note or [X] 
 - [x] [4] - `box86.sh` -"Box86 emulator" **Installs Runs fine**
 - [x] [4]- `duckstation.sh` -"PlayStation emulator - Duckstation standalone" **Installs Runs fine**
 - [X] [5] - `flycast` -Sega Dreamcast emulator
-- [X] [5]- `gearboy.sh` - Gameboy emulator - **Installs Plays fine, Need to clean up the controls**
+- [X] [B]- `gearboy.sh` - Gameboy emulator - **Installs Plays fine, Need to clean up the controls**
 - [ ] - `kat5200.sh` - Atari 8-bit/5200 emulator - **x86 only**
 - [X] [4]- `openbor.sh` - Beat 'em Up Game Engine - **Tested only on Pi4 so far, installs as a system instead of as a port, direct launching of games from emulationstation supported!**
 - [X] [5] - `openbor-v7533`  - Beat 'em Up Game Engine **installs as a system instead of as a port, direct launching of games from emulationstation supported!**
 - [x] [4]- `pico8.sh` - Fantasy Game Emulator - Adds as a new system in RetroPie so you can directly launch carts. **Was told that it works fine, so I'll go with that**
-- [X] [5]- `pokemini.sh` - Pokemon Mini emulator  - **x86 only**
+- [X] [B]- `pokemini.sh` - Pokemon Mini emulator  - **x86 only**
 - [ ] - `ppsspp-dev.sh` - PlayStation Portable emulator PPSSPP - latest development version - **Fails on pi4 and 5 (Jan 2025)**
 
 - [X] [B]- `supermodel-mechafatnick.sh` - Sega Model 3 Arcade emulator  - **Installs Does play, test game are slow**
