@@ -72,10 +72,10 @@ function configure_flycast() {
     moveConfigDir "$home/.local/share/flycast" "$biosdir/dc"
     mkUserDir "$biosdir/dc"
     
-    chown -R $user:$user "$biosdir/dc"
+    chown $__user:$__group -R "$biosdir/dc"
     
     moveConfigDir "$home/.config/flycast" "$md_conf_root/dreamcast/flycast"
     mkUserDir "$md_conf_root/dreamcast/flycast"
 
-    chown -R $user:$user "$md_conf_root/dreamcast/flycast"
+    chown $__user:$__group -R "$md_conf_root/dreamcast/flycast"
 }

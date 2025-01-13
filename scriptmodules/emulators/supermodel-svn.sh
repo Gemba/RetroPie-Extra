@@ -32,7 +32,7 @@ WideBackground=0\n\
 \n\n\
 "
 rp_module_section="exp"
-rp_module_flags="!rpi5"
+rp_module_flags=""
 
 function depends_supermodel-svn() {
     getDepends xorg subversion libsdl2-dev libsdl2-net-dev
@@ -88,7 +88,7 @@ function configure_supermodel-svn() {
     #- make a symlink to that file
     if [[ -f "$md_inst/Config/Supermodel.ini" ]] && [[ ! -L "$md_inst/Config/Supermodel.ini" ]]; then
     mv "$md_inst/Config/Supermodel.ini" "$romdir/supermodel/model3emu/svn/Supermodel.ini"
-    chown $user:$user "$romdir/supermodel/model3emu/svn/Supermodel.ini"
+    chown $__user:$__group -R "$romdir/supermodel/model3emu/svn/Supermodel.ini"
     ln -sv "$romdir/supermodel/model3emu/svn/Supermodel.ini" "$md_inst/Config/Supermodel.ini"
     fi
 }

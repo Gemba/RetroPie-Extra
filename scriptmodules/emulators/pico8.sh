@@ -14,7 +14,7 @@ rp_module_id="pico8"
 rp_module_desc="pico8 - The Fantasy Game Console"
 rp_module_help="Place your purchased pico8 zip file in $home/pico8.zip and add games to $romdir/pico8."
 rp_module_section="exp"
-rp_module_flags="!mali !x11 !rpi5"
+rp_module_flags="!mali !x11 !rpi4"
 
 function depends_pico8() {
     getDepends wiringpi unzip
@@ -43,7 +43,7 @@ function install_pico8() {
 function configure_pico8() {
     mkRomDir "$md_id"
     cp "$md_build/pico-8/lexaloffle-pico8.png" "$home/RetroPie/roms/$md_id"
-    chmod +x "$md_inst/pico8_dyn"
+    chown $__user:$__group -R "$md_inst/pico8_dyn"
 
     # Create startup script
     rm -f "$romdir/pico8/+Start PICO8.sh"
@@ -52,7 +52,7 @@ function configure_pico8() {
 $md_inst/pico8_dyn -root_path $homeRetroPie/roms/pico8 -splore
 _EOF_
     chown $user:$user "$romdir/pico8/+Start PICO8.sh"
-    chmod u+x "$romdir/pico8/+Start PICO8.sh"
+    chown $__user:$__group -R "$romdir/pico8/+Start PICO8.sh"
 
     addEmulator 0 "$md_id" "pico8" "$md_inst/pico8_dyn -root_path $home/RetroPie/roms/$md_id -run %ROM%"
     addSystem "pico8" "pico8 - The Fantasy Game Console" ".sh .p8 .png .rom .SH .P8 .PNG .ROM"

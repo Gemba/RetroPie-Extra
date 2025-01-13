@@ -16,7 +16,7 @@ rp_module_help="ROM Extensions: .7z .a52 .bin .zip .7Z .A52 .BIN .ZIP\n\nCopy yo
 rp_module_licence="GPL http://kat5200.jillybunch.com/doc/index.html"
 rp_module_repo="file http://kat5200.jillybunch.com/downloads/kat5200-0.8.1.tar.gz"
 rp_module_section="exp"
-rp_module_flags="!mali !kms !rpi5"
+rp_module_flags="!mali !kms !rpi5 !rpi4"
 
 function depends_kat5200() {
     getDepends libsqlite3-dev zlib1g zlib1g-dev libsdl2-dev libsdl2-image-dev libguichan-dev
@@ -51,7 +51,7 @@ function configure_kat5200() {
     mkRomDir "atari5200"
     mkUserDir "$home/.kat5200"
     mv "/etc/kat5200/kat5200.db3" "$home/.kat5200/"
-    chown $user:$user "$home/.kat5200/kat5200.db3"
+    chown $__user:$__group -R "$home/.kat5200/kat5200.db3"
     moveConfigDir "$home/.kat5200" "$md_conf_root/kat5200"
 
     addEmulator 1 "kat5200" "atari5200" "$md_inst/bin/kat5200 %ROM%"

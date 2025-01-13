@@ -53,7 +53,7 @@ function configure_aethersx2() {
     for file in "$onend"; do
         if [[ -f "$file" && ! -f "$file.old.$md_id" ]]; then
             cp -v "$file" "$file.old.$md_id"
-            chown $user:$user "$file.old.$md_id"
+            chown $__user:$__group -R "$file.old.$md_id"
         fi
     done
 
@@ -61,7 +61,7 @@ function configure_aethersx2() {
      if isPlatform "rpi"; then
         for file in "$onend"; do
             touch "$file"
-            chown $user:$user "$file"
+            chown $__user:$__group -R "$file"
         done
      #the command that needs to be written
         local onend_text='rm /opt/retropie/configs/ps2/Config/cache/vulkan_pipelines.bin && rm /opt/retropie/configs/ps2/Config/cache/vulkan_shaders.bin && rm /opt/retropie/configs/ps2/Config/cache/vulkan_shaders.idx'
@@ -88,7 +88,7 @@ function configure_aethersx2() {
     if [ ! -d "$biosdir/ps2" ]; then
         mkdir -p "$biosdir/ps2"
     fi
-    chown -R $user:$user "$biosdir/ps2"
+    chown $__user:$__group -R "$biosdir/ps2"
     # Create a symbolic link for BIOS
     if [ ! -L "$home/.config/aethersx2/bios" ]; then
         ln -s "$biosdir/ps2" "$home/.config/aethersx2/bios"
@@ -573,6 +573,6 @@ Type = None
 _EOF_
     fi
 
-    chown -R $user:$user "$md_conf_root/ps2/Config"
+    chown $__user:$__group -R "$md_conf_root/ps2/Config"
 
 }
