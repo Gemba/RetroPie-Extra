@@ -16,7 +16,7 @@ rp_module_help="ROM Extensions: .iso .cue .zip .ccd .mds\n\nCopy your Sega Satur
 rp_module_licence="GPL2 https://raw.githubusercontent.com/ALLRiPPED/yabause/yabasanshiro/LICENSE"
 rp_module_repo="git https://github.com/ALLRiPPED/yabause.git yabasanshiro 73c67668"
 rp_module_section="exp"
-rp_module_flags="!all rpi4 !rpi5"
+rp_module_flags="!all rpi4 rpi5"
 
 function sources_lr-yabasanshiro() {
     gitPullOrClone
@@ -30,7 +30,7 @@ function build_lr-yabasanshiro() {
         params+=(USE_ARM_DRC=1 DYNAREC_DEVMIYAX=1 ARCH_IS_LINUX=1)
         isPlatform "neon" && params+=(HAVE_NEON=1)
     elif isPlatform "aarch64"; then
-        params+=(USE_AARCH64_DRC=1 DYNAREC_DEVMIYAX=1)
+        params+=(USE_AARCH64_DRC=1 DYNAREC_DEVMIYAX=0)
     fi
     isPlatform "gles" && params+=(FORCE_GLES=1)
 
