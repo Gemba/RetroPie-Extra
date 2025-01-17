@@ -22,9 +22,9 @@ function sources_lr-same_cdi() {
 
 function build_lr-same_cdi() {
     if isPlatform "64bit"; then
-        rpSwap on 10240
+        rpSwap on 2048
     else
-        rpSwap on 6144
+        rpSwap on 1024
     fi
     make -f Makefile.libretro clean
     make -f Makefile.libretro
