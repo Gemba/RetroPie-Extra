@@ -16,7 +16,7 @@ rp_module_help="ROM Extensions: .nds .zip .7z\n\nCopy your Nintendo DS roms to $
 rp_module_licence="GPL3 https://raw.githubusercontent.com/libretro/melonDS/master/LICENSE"
 rp_module_repo="git https://github.com/libretro/melonDS.git master"
 rp_module_section="exp"
-rp_module_flags="!all rpi4 !rpi5"
+rp_module_flags=""
 
 function sources_lr-melonds() {
     gitPullOrClone
