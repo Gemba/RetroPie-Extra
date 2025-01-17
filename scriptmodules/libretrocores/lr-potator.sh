@@ -41,5 +41,5 @@ function configure_lr-potator() {
         ensureSystemretroconfig "potator"
 
         addEmulator 1 "$md_id" "potator" "$md_inst/potator_libretro.so"
-        addSystem "potator" "Watara Supervision" ".zip .ZIP .bin .BIN"
+        addSystem "potator" "Watara Supervision" ".sv .SV"
 }
