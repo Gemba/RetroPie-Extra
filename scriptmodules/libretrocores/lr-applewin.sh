@@ -13,7 +13,7 @@ rp_module_id="lr-applewin"
 rp_module_desc="Apple2e emulator: AppleWin (current) port for libretro"
 rp_module_help="ROM Extension: .po .dsk .nib .PO .DSK .NIB .zip\n\nCopy your roms to $romdir/apple2"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/audetto/AppleWin/master/LICENSE"
-rp_module_repo="git https://github.com/audetto/AppleWin.git master"
+rp_module_repo="git https://github.com/audetto/AppleWin.git master 87ab72a"
 rp_module_section="exp"
 rp_module_flags=""
 
