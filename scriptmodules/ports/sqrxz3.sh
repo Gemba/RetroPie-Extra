@@ -14,7 +14,7 @@ rp_module_desc="Sqrxz 3 - Adventure For Love by Retroguru"
 rp_module_help="Sqrxz 3 is a Jump'n'Run which requires a sharp mind and fast reflexes, high frustration is guaranteed."
 rp_module_licence="Retroguru http://www.retroguru.com/legal/"
 rp_module_section="opt"
-rp_module_flags="!x86 !mali"
+rp_module_flags="rpi4 rpi3 !rpi5"
 
 function depends_sqrxz3() {
     getDepends libsdl1.2-dev libsdl-mixer1.2 libraspberrypi-dev libghc-zlib-dev libmodplug-dev xorg
