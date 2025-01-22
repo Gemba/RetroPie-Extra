@@ -13,7 +13,7 @@ Most of the scripts do work as is.
 
 This needed since the RetroPie helpers that will now being used will not work on older versions of RetroPie
 
-And no I will not be working on ways to make it work with all versions, Please done ask and if issues are opened and you are using a old version. They will just be closed
+And no I will not be working on ways to make it work with all versions, Please dont ask and if issues are opened and you are using a old version. They will just be closed
 
 **The Pi5 is still being worked on and will continue to grow as time goes on as 64bit is still new for the Pi**
 
