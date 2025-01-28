@@ -19,7 +19,7 @@ rp_module_flags=""
 
 
 function depends_fallout1() {
-   getDepends libsdl2-2.0-0 xorg
+   getDepends cmake libsdl2-dev xorg
 }
 
 

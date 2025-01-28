@@ -19,7 +19,7 @@ rp_module_flags=""
 
 
 function depends_fallout2() {
-   getDepends libsdl2-2.0-0 xorg
+   getDepends cmake libsdl2-dev xorg
 }
 
 
@@ -41,8 +41,9 @@ function install_fallout2() {
 }
 
 function configure_fallout2() {
-    mkRomDir "$romdir/ports/$md_id"
-    #ln -snf "$romdir/ports/$md_id" "$md_inst"
+    mkRomDir "ports/$md_id"
+    ln -snf "$romdir/ports/$md_id" "$md_inst"
+
 
     moveConfigDir "$romdir/ports/$md_id/save" "$md_conf_root/$md_id/save"
     local scriptcfg="$md_inst/fallout2.cfg"
