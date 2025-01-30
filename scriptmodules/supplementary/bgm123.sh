@@ -14,7 +14,7 @@ rp_module_id="bgm123"
 rp_module_desc="Straightforward background music player using mpg123"
 rp_module_help="Place your MP3 files in $datadir/bgm"
 rp_module_section="exp"
-rp_module_flags=""
+rp_module_flags="!rpi5"
 
 function _get_vars_bgm123() {
     declare -A path=(
