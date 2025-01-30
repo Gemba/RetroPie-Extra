@@ -15,7 +15,7 @@ rp_module_help="Please put your data files in the roms/ports/dunelegacy/data fol
 rp_module_licence="GNU 2.0 https://sourceforge.net/p/dunedynasty/dunedynasty/ci/master/tree/COPYING"
 rp_module_repo="git git://dunelegacy.git.sourceforge.net/gitroot/dunelegacy/dunelegacy master"
 rp_module_section="exp"
-rp_module_flags="!mali !all rpi4 rpi3"
+rp_module_flags=""
 
 function depends_dunelegacy() {
 
