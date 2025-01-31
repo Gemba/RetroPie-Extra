@@ -27,7 +27,39 @@ function sources_perfect_dark() {
     gitPullOrClone
 }
 
+function copy_rom_dark() {
+    local romdir="$home/RetroPie/roms/n64"
+    local destdir="$home/.local/share/perfectdark/data"
+
+    mkdir -p "$destdir"
+
+    # Define the hashes to check against
+    local hash1="e03b088b6ac9e0080440efed07c1e40f"
+
+    # Iterate through the files in the ROM directory
+    for file in "$romdir"/*; do
+        if [[ -f "$file" ]]; then
+            local sha1=$(sha1sum "$file" | awk '{print $1}')
+            # Check if the calculated SHA1 matches either of the specified hashes
+            if [[ "$sha1" == "$hash1" || "$sha1" == "$hash2" ]]; then
+                cp "$file" "$destdir"
+                echo "Copied $file to $destdir"
+                return 0
+            fi
+        fi
+    done
+
+    echo "No matching ROM file found in $romdir"
+    return 1
+}
+
 function build_perfect_dark() {
+    copy_rom_dark
+    if [[ $? -ne 0 ]]; then
+        echo "Build cannot proceed without a valid ROM file."
+        return 1
+    fi
+
     cmake -G"Unix Makefiles" -Bbuild .
     cmake --build build -j4
 }
@@ -38,42 +70,7 @@ function install_perfect_dark() {
     )
 }
 
-function copy_rom_perfect_dark() {
-    local romdir="$home/RetroPie/roms/n64"
-    local destdir="$home/.local/share/perfectdark/data"
-
-    mkdir -p "$destdir"
-
-    # Define the hash to check against
-    local hash1="e03b088b6ac9e0080440efed07c1e40f"
-
-    # Iterate through the files in the ROM directory
-    for file in "$romdir"/*; do
-        if [[ -f "$file" ]]; then
-            local md5=$(md5sum "$file" | awk '{print $1}')
-            # Check if the calculated MD5 matches the specified hash
-            if [[ "$md5" == "$hash1" ]]; then
-                # Generate a new name to avoid overwriting
-                local base_name=$(basename "$file")
-                local new_name="pd.ntsc-final.z64"
-
-                # Copy and rename the file to the destination directory
-                cp "$file" "$destdir/$new_name"
-                echo "Copied and renamed $file to $destdir/$new_name"
-                return 0
-            fi
-        fi
-    done
-
-    echo "No matching ROM file found in $romdir"
-    return 0
-}
-
-
-
-function configure_perfect_dark() {
-    copy_rom_perfect_dark
-	
+function configure_perfect_dark() {	
     addPort "$md_id" "perfect_dark" "Perfect Dark PC Port" "$md_inst/pd.arm64"
 
 }
