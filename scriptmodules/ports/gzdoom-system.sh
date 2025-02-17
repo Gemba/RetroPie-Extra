@@ -14,7 +14,7 @@ rp_module_desc="GZDoom System - GZDoom as a system"
 rp_module_licence="GPL3 https://raw.githubusercontent.com/ZDoom/gzdoom/master/LICENSE"
 rp_module_repo="git https://github.com/ZDoom/gzdoom :_get_version_gzdoom"
 rp_module_section="exp"
-rp_module_flags=""
+rp_module_flags="rpi4 rpi5"
 
 function _get_version_gzdoom() {
     # default GZDoom version
