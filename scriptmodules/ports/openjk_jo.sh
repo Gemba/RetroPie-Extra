@@ -16,7 +16,7 @@ rp_module_licence="GPL2 https://raw.githubusercontent.com/JACoders/OpenJK/master
 rp_module_help="Copy assets0.pk3  assets1.pk3  assets2.pk3  assets5.pk3 into $romdir/ports/jedioutcast"
 rp_module_repo="git https://github.com/JACoders/OpenJK.git master"
 rp_module_section="exp"
-rp_module_flags="!all rpi4 rpi3"
+rp_module_flags="!all rpi4 rpi3 rpi5"
 
 function _arch_openjk_jo() {
     # exact parsing from Makefile
@@ -32,6 +32,10 @@ function sources_openjk_jo() {
 }
 
 function build_openjk_jo() {
+    if isPlatform "64bit"; then
+        sed -i 's#arm64|aarch64#arm64#' "$md_build/CMakeLists.txt"
+    fi
+
     mkdir "$md_build/build"
     cd "$md_build/build"
     cmake -DBuildJK2SPEngine=ON -DBuildJK2SPGame=ON -DBuildJK2SPRdVanilla=ON -DCMAKE_BUILD_TYPE=Release ..
