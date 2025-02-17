@@ -14,9 +14,18 @@ rp_module_id="devilutionx"
 rp_module_desc="devilutionx - Diablo Engine"
 rp_module_licence="https://raw.githubusercontent.com/diasurgical/devilutionX/master/LICENSE"
 rp_module_help="Copy your original diabdat.mpq file from Diablo to $romdir/ports/devilutionx."
-rp_module_repo="git  https://github.com/diasurgical/devilutionX.git 1.5.1"
+rp_module_repo="git  https://github.com/diasurgical/devilutionX.git :_get_version_devilutionx"
 rp_module_section="exp"
-rp_module_flags="!x86 !mali !all rpi4 rpi3"
+rp_module_flags="!x86 !mali"
+
+function _get_version_devilutionx() {
+    # default DevilutionX version
+    local devilutionx_version="1.5.3"
+
+    # 32 bit
+    isPlatform "32bit" && devilutionx_version="1.5.1"
+    echo $devilutionx_version
+}
 
 function depends_devilutionx() {
    getDepends cmake g++ libsdl2-dev libsodium-dev libpng-dev libbz2-dev libgtest-dev libgmock-dev libsdl2-image-dev libfmt-dev smpq
@@ -28,6 +37,10 @@ function sources_devilutionx() {
 }
 
 function build_devilutionx() {
+    cd tools
+    ./build_and_install_smpq.sh
+    cd ..
+
     cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF 
     cmake --build build
     md_ret_require="$md_build/build/devilutionx"

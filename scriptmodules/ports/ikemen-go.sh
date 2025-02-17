@@ -13,12 +13,11 @@ rp_module_id="ikemen-go"
 rp_module_desc="I.K.E.M.E.N GO - Clone of M.U.G.E.N to the Go programming language"
 rp_module_licence="MIT https://raw.githubusercontent.com/ikemen-engine/Ikemen-GO/master/License.txt"
 rp_module_help="Copy characters, stages, screenpacks, etc. to $romdir/ports/ikemen-go\n\nConfig files can be found at $configdir/ports/ikemen-go/save"
-rp_module_repo="git https://github.com/SuperFromND/Ikemen-GO.git 98point2"
-rp_module_section="exp !all rpi4 rpi3"
+rp_module_repo="git https://github.com/SuperFromND/Ikemen-GO.git develop"
+rp_module_section="exp !all rpi4 rpi5"
 
 function depends_ikemen-go() {
-    rp_callModule golang-1.17 install_bin
-    getDepends libgl1-mesa-dev xinit xorg libopenal-dev libgtk-3-dev libasound2-dev
+    getDepends golang golang-1.19 libgl1-mesa-dev xinit xorg libopenal-dev libgtk-3-dev libasound2-dev
 }
 
 function sources_ikemen-go() {
@@ -26,19 +25,20 @@ function sources_ikemen-go() {
 }
 
 function build_ikemen-go() {
-    local goroot="$(_get_goroot_golang-1.17)"
-    "$goroot/bin/go" clean -modcache
-    "$goroot/bin/go" build -v -tags al_cmpt -o Ikemen_GO ./src
+    sed -i 's#120#330#' "$md_build/src/render_gl.go"
+    sed -i 's#150#330#' "$md_build/src/render_gl_gl32.go"
+
+    #make Ikemen_GO_LinuxARM
     # grabs default screenpack and content required for the game to run; note that the screenpack has a CC-BY-NC 3.0 license
-    git clone https://github.com/SuperFromND/Ikemen_GO-Elecbyte-Screenpack.git elecbyte
-    md_ret_require="$md_build/Ikemen_GO"
+    #git clone https://github.com/ikemen-engine/Ikemen_GO-Elecbyte-Screenpack.git elecbyte
+    #md_ret_require="$md_build/bin/Ikemen_GO_LinuxARM"
 }
 
 function install_ikemen-go() {
     cp 'elecbyte/LICENCE.txt' 'ScreenpackLicense.txt'
 
     md_ret_files=(
-        'Ikemen_GO'
+        'bin/Ikemen_GO_LinuxARM'
         'License.txt'
         'ScreenpackLicense.txt'
         'data'
@@ -68,9 +68,9 @@ function configure_ikemen-go() {
 
     cat >"$md_inst/ikemen-go.sh" << _EOF_
 #!/bin/bash
-export MESA_GL_VERSION_OVERRIDE=2.1
+export MESA_GL_VERSION_OVERRIDE=3.3
 xset -dpms s off s noblank
-xterm -g 1x1+0-0 -e 'cd $md_inst && ./Ikemen_GO'
+xterm -g 1x1+0-0 -e 'cd $md_inst && ./Ikemen_GO_LinuxARM'
 _EOF_
     chmod +x "$md_inst/ikemen-go.sh"
     chown -R $user:$user "$md_inst"

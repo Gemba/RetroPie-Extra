@@ -16,10 +16,18 @@ rp_module_help="ROM Extension: .ldb\n\nYou need to unzip your RPG Maker games in
 rp_module_licence="GPL3 https://raw.githubusercontent.com/EasyRPG/Player/master/COPYING"
 rp_module_repo="git https://github.com/EasyRPG/Player.git master"
 rp_module_section="exp"
-rp_module_flags="!mali !all rpi4 rpi3 "
+rp_module_flags="!mali"
 
 function depends_easyrpg-player() {
-    getDepends cmake autoconf automake libtool doxygen libsdl2-dev libsdl2-mixer-dev libpng-dev libfreetype6-dev libboost-dev libpixman-1-dev libmpg123-dev libwildmidi-dev libvorbis-dev libopusfile-dev libsndfile1-dev libxmp-dev libspeexdsp-dev libharfbuzz-dev libfmt-dev zlib1g-dev libraspberrypi-dev libraspberrypi-bin expat libexpat1-dev libexpat-ocaml-dev
+    local depends=(
+        cmake autoconf automake libtool doxygen libsdl2-dev libsdl2-mixer-dev
+        libpng-dev libfreetype6-dev libboost-dev libpixman-1-dev libmpg123-dev
+        libwildmidi-dev libvorbis-dev libopusfile-dev libsndfile1-dev libxmp-dev
+        libspeexdsp-dev libharfbuzz-dev libfmt-dev zlib1g-dev
+        expat libexpat1-dev libexpat-ocaml-dev libinih-dev
+        libfluidsynth-dev fluidsynth)
+    isPlatform "32bit" && depends+=(libraspberrypi-dev libraspberrypi-bin)
+    getDepends "${depends[@]}"
 }
 
 function sources_easyrpg-player() {
@@ -27,17 +35,20 @@ function sources_easyrpg-player() {
 }
 
 function build_easyrpg-player() {
-     sed -i 's#APPEND_STRING PROPERTY#APPEND PROPERTY#' "$md_build/builds/cmake/Modules/FindSDL2.cmake"
+    mkdir -p build
+    cd build
+
+    sed -i 's#APPEND_STRING PROPERTY#APPEND PROPERTY#' "$md_build/builds/cmake/Modules/FindSDL2.cmake"
     sed -i 's#INTERFACE_LINK_LIBRARIES "${SDL2PC_STATIC_LIBRARIES}")#INTERFACE_INCLUDE_DIRECTORIES "${SDL2PC_STATIC_LIBRARY_DIRS}")#' "$md_build/builds/cmake/Modules/FindSDL2.cmake"
-    cmake . -DCMAKE_BUILD_TYPE=Release -DPLAYER_BUILD_LIBLCF=ON
+    cmake .. -DCMAKE_BUILD_TYPE=Release -DPLAYER_BUILD_LIBLCF=ON
     cmake --build .
 
-    md_ret_require="$md_build/easyrpg-player"
+    md_ret_require="$md_build/build/easyrpg-player"
 }
 
 function install_easyrpg-player() {
     md_ret_files=(
-        'easyrpg-player'
+        'build/easyrpg-player'
     )
 }
 

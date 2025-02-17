@@ -16,32 +16,28 @@ rp_module_help="ROM Extension: .ldb\n\nYou need to unzip your RPG Maker games in
 rp_module_licence="GPL3 https://raw.githubusercontent.com/libretro/easyrpg-libretro/master/COPYING"
 rp_module_repo="git https://github.com/libretro/easyrpg-libretro.git master"
 rp_module_section="exp"
-rp_module_flags=" !rpi5"
+rp_module_flags=""
 
 function depends_lr-easyrpg() {
     depends_easyrpg-player
 }
 
 function sources_lr-easyrpg() {
-    gitPullOrClone #&& gitPullOrClone "liblcf" https://github.com/EasyRPG/liblcf.git
+    gitPullOrClone 
 }
 
 function build_lr-easyrpg() {
-    cd "lib/liblcf"
-    autoreconf -i
-    ./configure --prefix=/usr
-    make
-    sudo make install
-    cd ../..
+    mkdir -p build
+    cd build
 
-    cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DPLAYER_TARGET_PLATFORM=libretro -DBUILD_SHARED_LIBS=ON
+    cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DPLAYER_TARGET_PLATFORM=libretro -DBUILD_SHARED_LIBS=ON
     cmake --build .
-    md_ret_require="$md_build/easyrpg_libretro.so"
+    md_ret_require="$md_build/build/easyrpg_libretro.so"
 }
 
 function install_lr-easyrpg() {
     md_ret_files=(
-        'easyrpg_libretro.so'
+        'build/easyrpg_libretro.so'
     )
 }
 

@@ -20,7 +20,13 @@ rp_module_section="exp"
 rp_module_flags=""
 
 function depends_rott-darkwar() {
-    getDepends libsdl2-dev libsdl2-mixer-dev fluidsynth libfluidsynth1 libfluidsynth-dev fluid-soundfont-gs fluid-soundfont-gm
+
+    local depends=(autotools-dev libsdl2-mixer-dev libopusfile0 libsdl2-mixer-2.0-0 libsdl2-ttf-dev xorg matchbox-window-manager x11-xserver-utils  libfluidsynth-dev fluidsynth fluid-soundfont-gs fluid-soundfont-gm)
+
+	    isPlatform "64bit" && depends+=(libfluidsynth3)
+        isPlatform "32bit" && depends+=(libfluidsynth1)
+
+	getDepends "${depends[@]}"
 
 }
 
