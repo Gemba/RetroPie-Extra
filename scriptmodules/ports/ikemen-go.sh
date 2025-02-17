@@ -15,7 +15,7 @@ rp_module_licence="MIT https://raw.githubusercontent.com/ikemen-engine/Ikemen-GO
 rp_module_help="Copy characters, stages, screenpacks, etc. to $romdir/ports/ikemen-go\n\nConfig files can be found at $configdir/ports/ikemen-go/save"
 rp_module_repo="git https://github.com/SuperFromND/Ikemen-GO.git develop"
 rp_module_section="exp"
-rp_module_flags="!all rpi4 rpi3"
+rp_module_flags="!all rpi4 rpi3 rpi5"
 
 
 function depends_ikemen-go() {
