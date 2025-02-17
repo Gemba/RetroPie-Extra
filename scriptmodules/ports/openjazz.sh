@@ -16,7 +16,7 @@ rp_module_licence="GPL2 https://raw.githubusercontent.com/AlisterT/openjazz/mast
 rp_module_help="For playing the registered version, replace the shareware files by adding your full version game files to $romdir/ports/openjazz/."
 rp_module_repo="git https://github.com/AlisterT/openjazz.git master"
 rp_module_section="exp"
-rp_module_flags="!all rpi4 rpi3"
+rp_module_flags="!all rpi4 rpi3 rpi5"
 
 function depends_openjazz() {
     getDepends libsdl1.2-dev libsdl-net1.2-dev libsdl-sound1.2-dev libsdl-mixer1.2-dev libsdl-image1.2-dev timidity freepats libxmp-dev
@@ -27,14 +27,14 @@ function sources_openjazz() {
 }
 
 function build_openjazz() {
-    make
-    md_ret_require="$md_build/OpenJazz"
+    cmake -B OJ -S .
+    cmake --build OJ
+    md_ret_require="$md_build/OJ/OpenJazz"
 }
 
 function install_openjazz() {
     md_ret_files=(
-        'OpenJazz'
-        'openjazz.000'
+        'OJ/OpenJazz'
     )
 }
 
