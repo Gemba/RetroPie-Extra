@@ -20,7 +20,11 @@ rp_module_flags="!all rpi4 rpi3"
 
 function _arch_rtcw() {
     # exact parsing from Makefile
-    echo "$(uname -m | sed -e 's/i.86/x86/' | sed -e 's/^arm.*/arm/')"
+    if isPlatform "rpi5"; then
+        echo arm
+    else
+        echo "$(uname -m | sed -e 's/i.86/x86/' | sed -e 's/^arm.*/arm/')"
+   fi
 }
 
 function depends_rtcw() {

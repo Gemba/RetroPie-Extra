@@ -19,8 +19,13 @@ rp_module_section="exp"
 rp_module_flags="!all rpi4 rpi3 rpi5"
 
 function _arch_openjk_jo() {
-    # exact parsing from Makefile
-    echo "$(uname -m | sed -e 's/i.86/x86/' | sed -e 's/^arm.*/arm/')"
+        # exact parsing from Makefile
+    if isPlatform "rpi5"; then
+        echo arm64
+    else
+        echo "$(uname -m | sed -e 's/i.86/x86/' | sed -e 's/^arm.*/arm/')"
+   fi
+
 }
 
 function depends_openjk_jo() {
@@ -32,10 +37,6 @@ function sources_openjk_jo() {
 }
 
 function build_openjk_jo() {
-    if isPlatform "64bit"; then
-        sed -i 's#arm64|aarch64#arm64#' "$md_build/CMakeLists.txt"
-    fi
-
     mkdir "$md_build/build"
     cd "$md_build/build"
     cmake -DBuildJK2SPEngine=ON -DBuildJK2SPGame=ON -DBuildJK2SPRdVanilla=ON -DCMAKE_BUILD_TYPE=Release ..
