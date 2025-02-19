@@ -13,16 +13,29 @@
 
 rp_module_id="relive"
 rp_module_desc="R.E.L.I.V.E - Oddworld: Abe's Oddysee and Oddworld: Abe's Exoddus"
+rp_module_repo="git https://github.com/AliveTeam/alive_reversing.git"
 rp_module_section="exp"
-rp_module_flags="noinstclean !all rpi4 rpi3"
+rp_module_flags="noinstclean !all rpi3 rpi4 rpi5"
 
 function depends_relive() {
-	getDepends cmake libboost-all-dev libsdl2-dev libsdl2-mixer-dev libopengl-dev libglx-dev libopengl0 libclang-7-dev  libclang-common-7-dev clang clang-7 zenity xorg x11-xserver-utils libxrandr-dev libxrandr2 lxrandr
+    local depends=(
+        cmake libsdl2-dev libsdl2-mixer-dev clang 
+        libopengl-dev libglx-dev libopengl0 xorg zenity 
+        x11-xserver-utils libxrandr-dev libxrandr2 lxrandr
+        libboost-all-dev
+)
+
+	isPlatform "64bit" && depends+=(clang-19 libclang-19-dev libclang-common-19-dev)
+        isPlatform "32bit" && depends+=(libclang-7-dev libclang-common-7-dev clang-7)
+
+	getDepends "${depends[@]}"
+
 }
 
 function sources_relive() {
-   git clone https://github.com/AliveTeam/alive_reversing.git --recursive
+   gitPullOrClone
 }
+
 
 function build_relive() {
 	cd alive_reversing
