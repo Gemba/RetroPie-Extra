@@ -17,26 +17,26 @@ rp_module_repo="git https://github.com/DCurrent/openbor.git master"
 rp_module_section="exp"
 rp_module_flags="sdl1 !mali !x11 !rpi4"
 
-function depends_openbor-v7533() {
+function depends_openbor-v5() {
     getDepends libsdl1.2-dev libsdl-gfx1.2-dev libogg-dev libvorbisidec-dev libvorbis-dev libpng-dev zlib1g-dev libvpx-dev
 }
 
-function sources_openbor-vv7533() {
+function sources_openbor-v5() {
     gitPullOrClone
 }
 
-function build_openbor-vv7533() {
+function build_openbor-v5() {
     cmake -DBUILD_LINUX=ON USE_SDL=ON -DTARGET_ARCH="ARM64" -S . -B build.lin.arm64 && cmake --build build.lin.arm64 --config Release -- -j
     md_ret_require="$md_build/build.lin.arm64/OpenBOR"
 }
 
-function install_openbor-vv7533() {
+function install_openbor-v5() {
     md_ret_files=(
        'build.lin.arm64/OpenBOR'
     )
 }
 
-function configure_openbor-vv7533() {
+function configure_openbor-v5() {
     mkRomDir "openbor"
 
     local dir
