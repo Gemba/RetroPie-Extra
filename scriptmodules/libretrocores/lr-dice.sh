@@ -44,6 +44,9 @@ function configure_lr-dice() {
         mkRomDir "$system"
         defaultRAConfig "$system"
         addEmulator 0 "$md_id" "$system" "$md_inst/dice_libretro.so"
-        addSystem "$system"
     done
+    addSystem "arcade"
+    # Supply fullname and extensions for platform DICE.  Doesn't configure
+    # scraper to use platform "arcade", but close enough.
+    addSystem "dice" "DICE" ".zip .dmy"
 }
