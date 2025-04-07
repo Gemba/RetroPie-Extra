@@ -13,7 +13,7 @@ rp_module_id="0ad"
 rp_module_desc="0ad - Battle of Survival - is a futuristic real-time strategy game"
 rp_module_licence="GNU https://libregamewiki.org/GNU_General_Public_License"
 rp_module_section="exp"
-rp_module_flags="!mali rpi4"
+rp_module_flags="!mali rpi4 rpi5"
 
 function depends_0ad() {
     getDepends xorg matchbox
