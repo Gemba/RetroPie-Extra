@@ -52,4 +52,7 @@ function configure_openbor-v5() {
     addEmulator 0 "$md_id" "openbor" "$md_inst/OpenBOR %ROM%"
 
     addSystem "openbor" "OpenBOR" ".zip .ZIP .pak .PAK"
+	
+	    chown $__user:$__group -R $md_conf_root/$md_id/$dir"
+
 }
