@@ -55,7 +55,7 @@ function install_bin_ut() {
 
     # For some reason, it failed when using "$rp_module_repo", this works perfectly.
     local base_url="https://github.com/OldUnreal/UnrealTournamentPatches"
-    local dl_file="OldUnreal-UTPatch${version}-Linux-${arch}.tar.bz2"
+    local dl_file="OldUnreal-UTPatch469e-Linux-amd64.tar.bz2"
     local dl_url="${base_url}/releases/download/v${version}/${dl_file}"
 
     # The download files use "x86" for the i386 architecture
