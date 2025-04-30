@@ -10,9 +10,6 @@
 # https://raw.githubusercontent.com/Exarkuniv/RetroPie-Extra/master/LICENSE
 #
 
-# TODO will this poison the namespace?
-platform="apple2"
-
 rp_module_id="gsplus"
 rp_module_desc="Apple IIgs emulator"
 rp_module_help="ROM Extensions: .dsk .po .2mg\n\nCopy your Apple II games to $romdir/$platform"
@@ -72,5 +69,5 @@ $md_inst/gsplus.sh "\$1"
 _EOF_
     
     chmod +x "$romdir/$platform/$launcher_name"
-    chown $user:$user "$romdir/$platform/$launcher_name"
+    chown -R __user:$__group "$romdir/$platform/$launcher_name"
 }
